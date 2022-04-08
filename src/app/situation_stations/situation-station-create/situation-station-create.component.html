@@ -1,0 +1,74 @@
+<div class="container col-md-12">
+  <simple-notifications></simple-notifications>
+  <div class="row">
+    <div class="col-md-10 col-lg-10">
+            <span class="form-group col-md-4">
+                 <input id="daaate" class="input-date btn1 " type="text" name="date" [(ngModel)]="this.situation.date">
+            </span>
+
+      <span>
+        <button class="btn btn-outline-info" routerLink="situation-station-list">Listes des situations des stations</button>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div id="scrollable" class="col-sm-5 col-md-2">
+      <mat-action-list size="4" *ngFor="let s of stations">
+        <a class="jumper">
+          <button  class="toggle" mat-list-item (click)="AfficheListSituation(s)">{{s.nomStation}}</button>
+        </a>
+      </mat-action-list>
+    </div>
+
+    <div class="col-sm-5 offset-sm-2 col-md-10 offset-md-0">
+      <div class=" form-row bg-light shadow p-3 mb-5 bg-body rounded" *ngFor="let situat   of situations ; index as i" [id]="situat.station.nomStation">
+        <div [id]="situat.station.nomStation" class="form-group col-auto"><label>Nom station</label>
+          <input [disabled]="value" type="text" class="ddd form-control" name="nomSation{{i}}"
+                 [(ngModel)]="situat.station.nomStation">
+          <mat-checkbox class="submit1" (click)="getValue()"></mat-checkbox>
+        </div>
+
+        <div class="form-group col-auto"><label>Hauteur d'eau(m)</label>
+          <input  type="number" class="form-control" name="Hj{{i}}" [(ngModel)]="situat.niveauEau"
+                 (focusout)="findByStationHydrologieNomStationAndHauteur(situat.station, situat.niveauEau , 0)">
+        </div>
+
+        <div class="form-group col-auto"><label>Pluie(mm)</label>
+          <input type="number" class="form-control" name="pluie{{i}}" [(ngModel)]="situat.pluie">
+        </div>
+        <div class="form-group col-auto"><label>Epaisseur du neige(cm)</label>
+          <input type="number" class="form-control" name="neige{{i}}" [(ngModel)]="situat.neige">
+        </div>
+
+
+        <div class="form-group col-auto"><label>Halerte(m)</label>
+          <input [disabled]="value"  class="coteAlerte form-control" type="number" name="halerte{{i}}" [(ngModel)]="situat.coteAlerte"
+                 (focusout)="findByStationHydrologieNomStationAndHauteur(situat.station, situat.coteAlerte , 1)">
+        </div>
+
+
+        <div class="form-group col-auto"><label>Hprealerte(m) </label>
+          <input [disabled]="value"  type="number" class=" cotePreAlerte form-control" name="Hprealerte{{i}}" [(ngModel)]="situat.cotePreAlerte"
+                 (focusout)="findByStationHydrologieNomStationAndHauteur(situat.station, situat.cotePreAlerte , 2)">
+        </div>
+
+        <div class="form-group col-auto"><label>Hmax(m)</label>
+          <input type="number" class="form-control" name="Hmax{{i}}" [(ngModel)]="situat.hauteurmax"
+                 (focusout)="findByStationHydrologieNomStationAndHauteur(situat.station, situat.hauteurmax , 3)">
+
+        </div>
+
+        <div class="form-group col-auto"><label>Heure Hmax </label>
+          <input type="text" class="form-control" name="heureMax{{i}}" [(ngModel)]="situat.heurDebitMax">
+        </div>
+        <div class="form-group col-auto">
+          <button [disabled]="situat.niveauEau == 0" class="btn  btn-outline-primary" (click)=" addSit(situat)">valider</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,208 @@
+<div class="container col-md-11">
+  <div class="row">
+        <span class="topTable" style="padding:4px">Date :
+          <p style="display: inline-block">{{dateToday | date: 'MM/dd/yyyy'}}</p>
+
+        </span>
+
+    <span class="topTable ml-auto" style="padding:4px;">
+          <input style="margin-right: 2em" id="inputDate" type="datetime-local" [(ngModel)]="dateToday">
+
+          <button style="display: inline-block" class="btn btn1" (click)="getData()">Valider</button>
+
+
+      <button style="margin-right: 1em" class="btn  btn-sm" (click)="exportpdf()"><i class="fa fa-print"></i>pdf</button>
+      <button class="btn  btn-sm" (click)="export()"><i class="fa fa-print"></i>png</button>
+    </span>
+  </div>
+</div>
+
+<div id="print">
+  <table class="col-md-11 shadow p-3 mb-5 bg-body rounded" id="Ptable" cellspacing="0" cellpadding="0" border="0"
+         align="center" style="">
+    <tbody style="
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;">
+    <tr id="ccc" style="color: #008080">
+
+      <td align="left">
+        <img id="img" src="images/agence-bassin-tensift.png">
+      </td>
+
+
+      <td align="left">
+        <strong>Situation des Barrages:</strong>
+        <strong>
+          {{dateToday | date: 'MM/dd/yyyy'}}
+        </strong>
+      </td>
+
+
+      <td align="right" style="direction: rtl">
+        <p style="direction: rtl ; margin-right:3px">
+          <strong class="sitBarrage"> &emsp;&emsp; المملكـة المغربـيـة <br>وكـالة الحوض المـائي <br> لتـانسيـفت
+          </strong>
+
+        </p>
+      </td>
+    </tr>
+    <tr id="bottomTable" class="bottomTable">
+
+      <td valign="top" class="gris">
+        <table cellpadding="4" border="1" align="center"
+               style="border:1px solid #FFFFFF;border-bottom:1px solid  #FFFFFF;">
+          <tbody id="barrage_current_year_r">
+          <tr>
+            <td class="th" align="center" rowspan="2">
+              <b>BARRAGES</b>
+            </td>
+
+            <td class="th" align="center" rowspan="2">
+              <b>CAPACITE NORMALE <br>(Mm3)</b>
+            </td>
+
+
+            <td class="th" align="center" colspan="2">
+              <b>{{dateToday | date: 'MM/dd/yyyy'}}</b>
+            </td>
+          </tr>
+          <tr>
+            <td scope="col" class="th" align="center">
+              <b>RESERVE (Mm3)</b>
+            </td>
+            <td scope="col" class="th" align="center">
+              <b>TAUX DE <br>REMPLISSAGE (%)<b>
+              </b>
+              </b>
+            </td>
+          </tr>
+
+
+          <tr *ngFor="let bar of barrages">
+              <td class="barrageName" nowrap="" align="left">{{bar.name}}</td>
+
+
+            <ng-container *ngIf="this.search(bar.name , 0) !== null">
+              <td align="center" >{{(this.search(bar.name , 0).volumeNormal)}}</td>
+              <td align="center" >{{(this.search(bar.name , 0).volumeActuel).toFixed(2)}}</td>
+              <td align="center" >{{(this.search(bar.name , 0).tauxRemplissage).toFixed(2)}}</td>
+            </ng-container>
+            <ng-container *ngIf="this.search(bar.name , 0) === 0">
+              <td></td>
+              <td></td>
+              <td></td>
+            </ng-container>
+          </tr>
+
+
+          <tr>
+            <td align="left"><b>Capacité totale </b></td>
+            <td align="center"><b>{{(this.calcules(0)).toFixed(.2)}}</b></td>
+
+          </tr>
+          <tr>
+            <td align="left"><b>Réserve totale </b></td>
+            <td>&nbsp;</td>
+
+            <td align="center"><b>{{(this.calcules(1)).toFixed(2)}}</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="TR" align="left" colspan="2"><b>Taux de remplissage moyen</b></td>
+            <td>&nbsp;</td>
+
+
+            <td class="TR" align="center">{{(this.calcules(2)).toFixed(2)}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+
+      <td valign="top" class="gris">
+
+        <table cellpadding="4" border="1" align="center"
+               style="border:1px solid #FFFFFF;border-bottom:1px solid  #FFFFFF;">
+          <tbody id="barrage_last_year_r">
+          <tr>
+            <td scope="col" class="th" align="center" colspan="2"><b>{{dateLastYear | date: 'MM/dd/yyyy'}}</b></td>
+          </tr>
+          <tr>
+            <td scope="col" class="th" align="center"><b>RESERVE <br>(Mm3)</b></td>
+            <td scope="col" class="th" align="center"><b>TAUX DE <br>REMPLISSAGE (%) </b></td>
+          </tr>
+
+          <tr *ngFor="let bar of barrages">
+            <ng-container *ngIf="this.search(bar.name , 1) !== null">
+<!--              <td align="center" >{{(this.search(bar.name , 1).barrage.name)}}</td>-->
+              <td align="center" >{{(this.search(bar.name , 1).volumeActuel).toFixed(2)}}</td>
+              <td align="center" >{{(this.search(bar.name , 1).tauxRemplissage).toFixed(2)}}</td>
+            </ng-container>
+            <ng-container *ngIf="this.search(bar.name , 1) === null">
+              <td></td>
+              <td></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center"><b>{{(this.calcules(3)).toFixed(2)}}</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td class="TR" align="center">{{(this.calcules(4)).toFixed(2)}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+
+      <td valign="top" class="tableFixDate">
+        <table cellpadding="3" border="1" align="center"
+               style="border:1px solid #FFFFFF;border-bottom:1px solid  #FFFFFF;">
+          <tbody>
+
+          <tr>
+            <td scope="col" class="th" align="center" colspan="2"><b>{{fixDate | date: 'MM/dd/yyyy'}}</b>
+            </td>
+          </tr>
+
+          <tr>
+            <td scope="col" class="th" align="center"><b>RESERVE <br>(Mm3)</b></td>
+          </tr>
+
+          <tr *ngFor="let bar of barrages">
+            <ng-container *ngIf="this.search(bar.name , 2) !== null">
+              <!--              <td align="center" >{{(this.search(bar.name , 1).barrage.name)}}</td>-->
+              <td align="center" >{{(this.search(bar.name , 2).volumeActuel).toFixed(2)}}</td>
+            </ng-container>
+
+            <ng-container *ngIf="this.search(bar.name , 2) === null">
+              <td></td>
+            </ng-container>
+          </tr>
+
+          <tr>
+            <td align="center"></td>
+          </tr>
+
+
+          <tr>
+            <td align="center"><strong>{{(this.calcules(5)).toFixed(2)}}</strong></td>
+          </tr>
+
+
+          </tbody>
+        </table>
+      </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

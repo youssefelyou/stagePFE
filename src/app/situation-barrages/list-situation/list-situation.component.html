@@ -1,0 +1,71 @@
+<div class="card">
+  <div class="card-header"><span><strong>Listes des situations d'aujourd'hui</strong></span>
+
+    <strong>
+      <button class="btn btn1 btn-sm" (click)="export()"><i class="fa fa-print"></i>
+        xlsx
+      </button>
+    </strong>
+  </div>
+  <div id="print" class="card-body">
+    <table class="table table-bordered table-striped bg-light shadow p-3 mb-5 bg-body rounded ">
+      <thead id="cc">
+      <tr>
+
+
+        <th scope="row">Date</th>
+        <th scope="row">Barrage</th>
+        <th scope="row">Hauteur(m)</th>
+        <th scope="row">Volume Actuel(m³)</th>
+        <th scope="row">Volume Normal(m³)</th>
+        <th scope="row">TR(m³)</th>
+        <th scope="row">Debit(m³/s)</th>
+        <th scope="row">Pluie(mm)</th>
+        <th scope="row">Turbinage(m³)</th>
+        <th scope="row">Irrigation(m³)</th>
+        <th scope="row">EC(m³)</th>
+        <th scope="row">Turbidité(g/)</th>
+        <th scope="row">Bac(m³)</th>
+        <th scope="row">CAM(m³)</th>
+        <th scope="row">CMG(m³)</th>
+        <th scope="row"></th>
+      </tr>
+      </thead>
+      <tbody class="bg-light">
+      <tr *ngFor="let c of situations; index as i">
+        <td>{{c.date | date:'dd/MM/YYYY'}}</td>
+        <td>{{c.barrage.name}}</td>
+        <td>{{c.hauteurActuel}}</td>
+        <td>{{c.volumeActuel.toFixed(2)}}</td>
+        <td>{{c.volumeNormal}}</td>
+        <td>{{c.tauxRemplissage.toFixed(2)}}</td>
+        <td>{{c.debit}}</td>
+        <td>{{c.pluie}}</td>
+        <td>{{c.turbinage}}</td>
+        <td>{{c.irrigation}}</td>
+        <td>{{c.evacuateurCrues}}</td>
+        <td>{{c.turbidite}}</td>
+        <td>{{c.bac}}</td>
+        <td *ngIf="c.observation?.cam !== 0">{{c.observation.cam}}</td>
+        <td *ngIf="c.observation.cam === 0 || c.observation.cam === undefined  "></td>
+        <td *ngIf="c.observation?.cmg !== 0 ">{{c.observation.cmg}}</td>
+        <td *ngIf="c.observation.cmg === 0 || c.observation.cmg === undefined   "></td>
+        <td><span (click)="update(i,c)"><i class="fa fa-edit btn-sm btn-warning"></i></span></td>
+      </tr>
+      </tbody>
+      <tfoot>
+
+
+      </tfoot>
+    </table>
+    <div class="card bg-light">
+      <strong class="sm">TR : Taux de remplissage</strong>
+      <strong class="sm">EC : Evacuateur de crue -m3</strong>
+    </div>
+
+  </div>
+
+  <!--  <div class="card-footer"></div>-->
+</div>
+
+

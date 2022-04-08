@@ -1,0 +1,63 @@
+.row1 {
+  background-color: #305F72;
+  margin: 1%;
+}
+
+thead {
+  background-color: #ADD8E6;
+}
+tbody{
+  background-color: #F8F8FF;
+}
+
+strong {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+th {
+  font-size: xx-small;
+  line-height: 15px;
+  vertical-align: top !important;
+
+}
+
+span {
+  margin-right: 2em;
+}
+
+td {
+  font-size: x-small;
+  line-height: 13px;
+
+  vertical-align: top !important
+}
+
+.btn-sm {
+  margin-right: 10px;
+}
+
+.select {
+  color: aliceblue;
+}
+
+select {
+  height: 36px;
+  margin-top: 4px;
+  width: 10em;
+  border: 1px #206c6c solid;
+  box-sizing: unset;
+}
+
+.print-button {
+  float: right !important;
+  margin-left: auto;
+  padding: 4px;
+}
+
+#top-table{
+  text-align: center;
+  font-size: larger;
+  background-color: #305F72;
+  color: #FFFFFF;
+}

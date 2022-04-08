@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <table class="table  table-hover ">
+      <thead>
+
+      <th>Nom station</th>
+      <th>Pluie</th>
+      <th>Neige</th>
+      <th>Vent</th>
+      <th>Direction Vent</th>
+      <th>Rayonnement</th>
+      <th>Humidité</th>
+      <th>Evaporation</th>
+      <th>Température Sec</th>
+      <th>Température Mouille</th>
+      <th>Température Min</th>
+      <th>Température Max</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of stationclimas; index as i">
+        <td>{{c.name}}</td>
+        <td>{{c.pluie}}</td>
+        <td>{{c.neige}}</td>
+        <td>{{c.vent}}</td>
+        <td>{{c.directionVent}}</td>
+        <td>{{c.rayonnement}}</td>
+        <td>{{c.humidite}}</td>
+        <td>{{c.evaporation}}</td>
+        <td>{{c.temperatureSec}}</td>
+        <td>{{c.temperatureMouille}}</td>
+        <td>{{c.temperatureMin}}</td>
+        <td>{{c.temperatureMax}}</td>
+        <td><span (click)="update(i,c)" ><i class="fa fa-edit btn btn-warning"></i></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<!--  <div class="card-footer"></div>-->
+</div>

@@ -1,0 +1,18 @@
+<div class="p-3 border bg-light">
+  <div>
+    <mat-form-field class="nav-item dropdown" appearance="outline">
+      <mat-label class="labelSelect">Choisir un barrage</mat-label>
+      <mat-select [(ngModel)]="barrageName" disableRipple>
+        <mat-option id="ccc" *ngFor="let barrag of barrages" [value]="barrag.name">
+          {{barrag.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+<!--  <div>-->
+<!--    <button class="btn btn-danger col-md-4" (click)="deleteByNomStation()">click</button>-->
+<!--  </div>-->
+  <div class="mb-3">
+    <input class="form-control" type="file" id="formFile" (change)="onFileChange($event)" multiple="false">
+  </div>
+</div>

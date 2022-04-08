@@ -1,0 +1,108 @@
+<div class="container col-md-12">
+  <div class="row targetDiv col-md-12" id="div1">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Station Climatologique</b> </h3>
+      </div>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de Station</mat-label>
+      <label>
+        <input type="text" matInput placeholder [(ngModel)]="stationclima.name">
+      </label>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Pluie</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.pluie">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Neige</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.neige">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Vent</mat-label>
+      <input type="text" matInput placeholder [(ngModel)]="stationclima.vent">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Direction Vent</mat-label>
+      <input type="text" matInput placeholder [(ngModel)]="stationclima.directionVent">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Humidité</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.rayonnement">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Rayonnement</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.humidite">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Evaporation</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.evaporation">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Température Sec</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.temperatureSec">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Température Mouille</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.temperatureMouille">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Température Min</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.temperatureMin">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Température Max</mat-label>
+      <input type="number" matInput placeholder [(ngModel)]="stationclima.temperatureMax">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+      <button class="btn btn-primary btn-lg"  mat-button (click)="save() ; load()">Save</button>
+   </span>
+    </mat-card>
+  </div>
+
+
+</div>
+
+<app-station-climatologique-list></app-station-climatologique-list>

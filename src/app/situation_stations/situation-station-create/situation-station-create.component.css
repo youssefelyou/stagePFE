@@ -1,0 +1,114 @@
+.mb-5, .my-5 {
+  margin-bottom: 4px !important;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 1em 0;
+  background-color: #F0B7A4;
+}
+
+#btn {
+  background-color: #F18C8E;
+
+}
+
+.btn-outline-primary {
+  background-color: #F18C8E;
+  color: #173e43;
+}
+
+.btn1 {
+  margin-bottom: 3em;
+}
+
+span {
+  margin-bottom: 0em;
+}
+
+.container {
+  margin-left: auto;
+  background-color: #305F72;
+  margin: 1% 0;
+}
+
+.input-date {
+  height: 33px;
+  width: 164px;
+  border: 0.5px solid #F18C8E;
+  border-radius: 7px;
+  background-color: #F0B7A4;
+  color: black;
+  font-size: inherit;
+  margin: 1em 33px 1em -17px;
+}
+
+input {
+  width: 8em;
+}
+
+.btn-outline-primary {
+  margin-top: 27px;
+  height: 34px;
+
+}
+
+.form-control {
+  display: block;
+  /*width: 100%;*/
+  /* height: calc(1.5em + .75rem + 2px); */
+  padding: .375rem .75rem;
+   font-size: smaller;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  /* margin: -4px; */
+}
+
+.toggle {
+  background-color: #305F72;
+  color: #F18C8E;
+  border-top: none;
+  font-size: small;
+  border-bottom: #F0B7A4 solid 1px;
+  padding: 0;
+}
+
+.toggle:focus {
+  background-color: #ced4da;
+}
+
+.toggle:current {
+  background-color: #ced4da;
+}
+
+#scrollable {
+  overflow-y: scroll;
+  width: auto;
+  height: 50em;
+  display: block;
+  border: none;
+}
+
+#scrollable select {
+  border: none;
+}
+
+.form-group {
+  margin-bottom: 0 !important;
+  line-height: 2px;
+}
+label{
+  font-size: smaller;
+}
+.btn-outline-info{
+  margin-left: 32%;
+  margin-bottom: 1%;
+}

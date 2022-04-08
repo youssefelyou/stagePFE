@@ -1,0 +1,149 @@
+
+.container {
+  /*background-image: url("src/images/barrage3.jpg");*/
+  /*background-size: cover;*/
+  /*background-color: #3fb0ac;*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  height: auto;
+}
+
+#daaate {
+}
+
+span {
+  margin-right: -5%;
+}
+
+.card-title {
+  position: inherit;
+  background-color: #305F72;
+  height: auto;
+  margin-top: 1em;
+  margin-right: 2%;
+}
+
+.labelSelect {
+  color: #F18C8E;
+}
+
+mat-label {
+  color: #305F72;
+}
+
+mat-form-field {
+  margin-right: 12%;
+}
+
+h3 {
+  background-color: #F18C8E;
+  margin: -16px -16px 1% -17px;
+  height: 60px;
+  text-align: center;
+  border-radius: 2%
+}
+
+.date-tixt {
+  font-size: 12px;
+  margin: 3%;
+}
+
+.input-date {
+  height: 30px;
+  width: 230px;
+  border: 0.5px solid #F18C8E;
+  border-radius: 7px;
+  background-color: #F0B7A4;
+  color: black;
+  font-size: small;
+}
+
+mat-option {
+  color: #F18C8E;
+}
+
+mat-select {
+  color: #F18C8E;
+}
+
+.observationDiv {
+  display: none;
+}
+
+.btn {
+  background-color: #F18C8E;
+  width: 209px;
+  margin-left: 14%;
+  float: right;
+}
+
+.obsCard {
+  margin-top: -26em;
+  margin-left: 27%;
+}
+
+.b11 {
+  background-color: #F18C8E;
+  width: min-content;
+}
+
+.showObservation {
+  margin-left: 3%;
+  width: 206px
+}
+
+.mat-form-field {
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0.25em -15px;
+}
+
+#montable {
+  margin: 1%;
+}
+
+.toggle {
+  background-color: #305F72;
+  color: #F18C8E;
+  font-size: 14px;
+  border-top: none;
+  border-bottom: #F0B7A4 solid 1px;
+  padding: 0;
+}
+
+/*.toggle:active {*/
+/*  background-color: #ced4da;*/
+/*}*/
+
+.scrollable {
+  overflow-y: scroll;
+  width: auto;
+  height: 20em;
+  display: block;
+  border: none;
+}
+
+.scrollable select {
+  border: none;
+}
+
+.toggle.togg{
+  background-color: #305F72;
+}
+.b12{
+  margin-left: 10%;
+  margin-top: 2%;
+}
+.mat-form-field {
+  font-size: smaller !important;
+}
+
+.showObservation{
+  background-color: #305F72;
+  color: #F18C8E;
+}

@@ -1,0 +1,49 @@
+
+      <div class=" form-row bg-light">
+        <div  class="form-group col-auto"><label>Nom station</label>
+          <input disabled type="text" class="ddd form-control" [(ngModel)]="situation.station.nomStation">
+        </div>
+
+        <div class="form-group col-auto"><label>Hj</label>
+          <input  type="number" class="form-control"  [(ngModel)]="situation.niveauEau"
+                  (focusout)="findByStationHydrologieNomStationAndHauteur(situation.station, situation.niveauEau , 0)">
+        </div>
+
+        <div class="form-group col-auto"><label>Pluie</label>
+          <input type="number" class="form-control"  [(ngModel)]="situation.pluie">
+        </div>
+        <div class="form-group col-auto"><label>Epaisseur du neige</label>
+          <input type="number" class="form-control"  [(ngModel)]="situation.neige">
+        </div>
+
+
+        <div class="form-group col-auto"><label>Hauteur pre alerte </label>
+          <input   type="number" class=" cotePreAlerte form-control"  [(ngModel)]="situation.cotePreAlerte"
+                   (focusout)="findByStationHydrologieNomStationAndHauteur(situation.station, situation.cotePreAlerte , 2)">
+          <!--          <mat-checkbox class="submit2" ></mat-checkbox>-->
+        </div>
+
+        <div class="form-group col-auto"><label>Halerte</label>
+          <input  class="coteAlerte form-control" type="number"  [(ngModel)]="situation.coteAlerte"
+                  (focusout)="findByStationHydrologieNomStationAndHauteur(situation.station, situation.coteAlerte , 1)">
+          <!--          <mat-checkbox class="submit1" ></mat-checkbox>-->
+        </div>
+
+
+
+        <div class="form-group col-auto"><label>Hmax</label>
+          <input type="number" class="form-control"  [(ngModel)]="situation.hauteurmax"
+                 (focusout)="findByStationHydrologieNomStationAndHauteur(situation.station, situation.hauteurmax , 3)">
+
+        </div>
+
+        <div class="form-group col-auto"><label>Heure Hmax </label>
+          <input type="text" class="form-control"  [(ngModel)]="situation.heurDebitMax">
+        </div>
+
+        <div class="form-group col-auto">
+          <button  mat-dialog-close class="btn  btn-outline-primary" (click)=" addSit(situation)">valider</button>
+        </div>
+
+      </div>
+

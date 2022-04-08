@@ -1,0 +1,66 @@
+span {
+  margin-right: 50px;
+  margin-bottom: 70px;
+}
+
+mat-label {
+  color: #305F72;
+  font-size: 15px;
+}
+
+button {
+  background-color: #F18C8E;
+  height: 50px;
+  width: 200px;
+  color: black;
+  float: right;
+}
+
+.container {
+  position: relative;
+  background-image: url("src/images/barragesituation.jpg");
+  background-size: cover;
+  background-color: #3fb0ac;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 800px;
+}
+
+#div2 {
+  display: none;
+}
+
+#div3 {
+  display: none;
+}
+
+#div4 {
+  display: none;
+}
+
+
+
+.card {
+  margin: 5% 17% 10% 17%;
+}
+
+
+h3 {
+  background-color: #F18C8E;
+  margin: -30px -17px 1% -17px;
+  height: 60px;
+  text-align: center
+}
+
+mat-label{
+  color: #305F72;
+  font-size: 15px;
+}
+
+.card{
+  position: absolute;
+}
+.b1{
+  background-color: #305f72;
+  margin-right: 30px;
+}

@@ -1,0 +1,387 @@
+<div class="container col-md-12">
+  <div class="row targetDiv col-md-12" id="div1">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>insertion les donnees de station: </b></h3>
+      </div>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de station</mat-label>
+      <label>
+        <input required type="text" matInput placeholder="Placeholder" [(ngModel)]="station.nomStation">
+      </label>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>IRE</mat-label>
+      <input required type="text" matInput placeholder="Placeholder" [(ngModel)]="station.nire">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Numéro de Poste</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.nrePoste">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Province</mat-label>
+          <mat-select [(ngModel)]="station.province">
+          <mat-option value="EL HAOUZ">EL HAOUZ</mat-option>
+          <mat-option value="AZILAL">AZILAL</mat-option>
+          <mat-option value="ESSAOUIRA">ESSAOUIRA</mat-option>
+          <mat-option value="CHICHAOUA">CHICHAOUA</mat-option>
+          <mat-option value="MARRAKECH">MARRAKECH</mat-option>
+          <mat-option value="EL HAOUZ-KELAA">EL HAOUZ-KELAA</mat-option>
+          <mat-option value="SAFI">SAFI</mat-option>
+          <mat-option value="RHAMNA">RHAMNA</mat-option>
+          <mat-option value="EL KELAA">EL KELAA</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Type Station</mat-label>
+          <mat-select [(value)]="station.typeStation">
+          <mat-option id="ccc" value="Pluviométrique"> Pluviométrique</mat-option>
+            <mat-option id="cc" value="hydro-pluviométrique"> hydro-pluviométrique</mat-option>
+          </mat-select>
+</mat-form-field>
+      </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Commune</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.commune">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Carte</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.carte">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Surface du bassin</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="station.surface">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Sous bassin</mat-label>
+          <mat-select [(ngModel)]="station.sousbassin">
+
+          <mat-option value="LAGH">LAGH</mat-option>
+          <mat-option value="ABHT">ABHT</mat-option>
+          <mat-option value="Bassin R'dat">Bassin R'dat</mat-option>
+          <mat-option value="ZAT">ZAT</mat-option>
+          <mat-option value="GHMAT">GHMAT</mat-option>
+          <mat-option value="Oued Issil">Oued Issil</mat-option>
+          <mat-option value="NFIS">NFIS</mat-option>
+          <mat-option value="Oued Akar">Oued Akar</mat-option>
+          <mat-option value="Assif El Mel">Assif El Mel</mat-option>
+          <mat-option value="Seksawa">Seksawa</mat-option>
+          <mat-option value="Imintanout">Imintanout</mat-option>
+          <mat-option value="El Bour">El Bour</mat-option>
+          <mat-option value="Tensift">Tensift</mat-option>
+          <mat-option value="Ksob">Ksob</mat-option>
+
+
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Statut Foncier</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.statutFoncier">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Nature</mat-label>
+          <mat-select [(value)]="station.nature">
+          <mat-option value="Simplifie"> Simplifie</mat-option>
+            <mat-option value="Principale"> Principale</mat-option>
+          </mat-select>
+</mat-form-field>
+      </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Localite plus proche</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.localiteplusproche">
+    </mat-form-field>
+  </span>
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Oued</mat-label>
+          <mat-select [(ngModel)]="station.oued">
+
+          <mat-option value="LAKHDAR">LAKHDAR</mat-option>
+          <mat-option value="TASSAOUTE">TASSAOUTE</mat-option>
+          <mat-option value="NFIS">NFIS</mat-option>
+          <mat-option value="IGOUZOULENE">IGOUZOULENE</mat-option>
+          <mat-option value="EL MEL">EL MEL</mat-option>
+          <mat-option value="CHICHAOUA">CHICHAOUA</mat-option>
+          <mat-option value="LAGH">LAGH</mat-option>
+          <mat-option value="R'DAT">R'DAT</mat-option>
+          <mat-option value="ZAT">ZAT</mat-option>
+          <mat-option value="OURIKA">OURIKA</mat-option>
+          <mat-option value="ISSIL">ISSIL</mat-option>
+          <mat-option value="IMLIL">IMLIL</mat-option>
+          <mat-option value="RERAYA">RERAYA</mat-option>
+          <mat-option value="AMEZNASS">AMEZNASS</mat-option>
+          <mat-option value="IMINTANOUTE">IMINTANOUTE</mat-option>
+          <mat-option value="SEKSAOUA">SEKSAOUA</mat-option>
+          <mat-option value="TENSIFT">TENSIFT</mat-option>
+          <mat-option value="KSOB">KSOB</mat-option>
+          <mat-option value="JEMALLA">JEMALLA</mat-option>
+          <mat-option value="AMEZMIZ">AMEZMIZ</mat-option>
+          <mat-option value="AKAR">AKAR</mat-option>
+          <mat-option value="GHMAT">GHMAT</mat-option>
+          <mat-option value="JBILET">JBILET</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date mise en service</mat-label>
+      <input type="date" matInput placeholder="Placeholder" [(ngModel)]="station.dateMiseEnService">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Télétransmise</mat-label>
+          <mat-select [(value)]="station.typeStation">
+          <mat-option id="c" value="oui"> Oui</mat-option>
+            <mat-option id="cccc" value="non"> Non</mat-option>
+          </mat-select>
+</mat-form-field>
+      </span>
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Accès</mat-label>
+          <mat-select [(value)]="station.typeStation">
+          <mat-option id="b" value="facile"> facile</mat-option>
+            <mat-option id="cv" value="difficile"> difficile</mat-option>
+          </mat-select>
+</mat-form-field>
+      </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>x</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="station.x">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>y</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="station.y">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>z</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="station.z">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span style="float: right ; margin-top: 5%;">
+      <button [disabled]="this.station.nomStation == '' || this.station.nire == undefined " class="showSingle" target="2" mat-button>Suivant</button>
+   </span>
+    </mat-card>
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div2">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>les informations de l'Obsérvateur</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom et Prenom</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="station.gardien.nomPrenom">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="station.gardien.age">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CIN</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="station.gardien.cin">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date de naissance</mat-label>
+      <label>
+        <input type="date" matInput [(ngModel)]="station.gardien.datenaissance">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date de recrutement</mat-label>
+      <label>
+        <input type="date" matInput [(ngModel)]="station.gardien.entrerFonction">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Situation familiale</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="station.gardien.situationfami">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Situation administrative</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="station.gardien.situationadministrative">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Niveau scolaire</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="station.gardien.niveauscolaire">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Numéro de Téléphone</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="station.gardien.ntel">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span><br>
+
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="1" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button [disabled]="station.gardien.nomPrenom == '' || station.gardien.nomPrenom == null" class="showSingle" target="3" mat-button (click)="saveGardien()">Suivant</button>
+  </span>
+    </mat-card>
+
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div3">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Batterie Echelle </b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nre</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Nre" [(ngModel)]="batterie.nre">
+      </label>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Min</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="batterie.min">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Max</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="batterie.max">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span style="float: left ">
+      <button class="showDernier" target="2" mat-button>Précédent</button>
+  </span>
+
+      <span>
+      <button class="showSingle" target="1" mat-button (click)="saveListBatterie()">Valider</button>
+  </span>
+
+      <span>
+      <button class="btn b1 btn-sm btn-outline-success" mat-button (click)="saveBatterie()">Ajouter</button>
+  </span>
+
+    </mat-card>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-header"><span><strong>Listes des situations des stations d'aujourd'hui</strong></span>
+    <strong>
+      <button class="btn btn1 btn-sm" (click)="export()"><i class="fa fa-print"></i>xlsx</button>
+      <button style="margin-right: 10px" class="btn btn1 btn-sm" (click)="ngOnInit()"><i class="fas fa-sync"></i></button>
+    </strong>
+  </div>
+  <div id="print" class="card-body">
+    <table class="table table-bordered table-striped bg-light shadow p-3 mb-5 bg-body rounded ">
+      <thead id="cc">
+      <tr>
+
+
+        <th scope="row">Date</th>
+        <th scope="row">Station</th>
+        <th scope="row">Niveau d’eau(m)</th>
+        <th scope="row">Débit(m³/s)</th>
+        <th scope="row">Pluie(mm)</th>
+        <th scope="row">Neige(cm)</th>
+        <th scope="row">Cote pré-alerte(m)</th>
+        <th scope="row">Seuil pré-alerte(m)</th>
+        <th scope="row">Cote d’alerte(m)</th>
+        <th scope="row">Seuil d’alerte(m)</th>
+        <th scope="row">Hauteur max(m)</th>
+        <th scope="row">Cote max(m)</th>
+        <th scope="row">Heur hauteur max</th>
+        <th scope="row"></th>
+      </tr>
+      </thead>
+      <tbody class="bg-light">
+      <tr *ngFor="let c of situationstations; index as i">
+        <td>{{c.date | date:'dd/MM/YYYY'}}</td>
+        <td>{{c.station.nomStation}}</td>
+        <td>{{c.niveauEau}}</td>
+        <td>{{c.debit}}</td>
+        <td>{{c.pluie}}</td>
+        <td>{{c.neige}}</td>
+        <td>{{c.cotePreAlerte}}</td>
+        <td>{{c.debitPreAlerte}}</td>
+        <td>{{c.coteAlerte}}</td>
+        <td>{{c.debitAlerte}}</td>
+        <td>{{c.debitMax}}</td>
+        <td>{{c.hauteurmax}}</td>
+        <td>{{c.heurDebitMax}}</td>
+        <td><span (click)="update(i,c) ; openDialog()" ><i class="fa fa-edit btn btn-sm btn-warning"></i></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--  <div class="card-footer"></div>-->
+</div>
+
+

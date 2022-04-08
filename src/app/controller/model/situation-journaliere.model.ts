@@ -1,0 +1,36 @@
+export class SituationJournaliere {
+  public pluie: number | undefined;
+  public neige: number | undefined;
+  public niveauEau: number | undefined;
+  public niveauEauYesterday: number | undefined;
+  public debit: number | undefined;
+  public hauteurmax: number | undefined;
+  public coteAlerte: number | undefined;
+  public cotePreAlerte: number | undefined;
+  public debitMax: number | undefined;
+  public heurDebitMax: string | undefined;
+  public province: string | undefined;
+  public oued: string | undefined;
+  public debitPreAlerte: number | undefined;
+  public debitAlerte: number | undefined;
+  public volumeActuel: number =  Number();
+  public volumeYesterday: number =  Number();
+  public varationVolume: number | undefined;
+  public tauxRemplissage: number  =  Number();
+  public volumeNormal: number | undefined;
+  public date: Date = new Date();
+  public turbinage: number | undefined;
+  public irrigation: string | undefined;
+  public vidangeFond: string | undefined;
+  public evacuateurCrues: string | undefined;
+  public turbidite: string | undefined;
+  public libelle: string | undefined;
+  public bac: number | undefined;
+  public cam: number | undefined;
+  public cmg: number | undefined;
+  public fuits: string | undefined;
+  public sousBassin: string | undefined;
+  public cr: number | undefined;
+  public aep: number | undefined;
+  public bp: number | undefined;
+}

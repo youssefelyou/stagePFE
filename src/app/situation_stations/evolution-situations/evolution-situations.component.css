@@ -1,0 +1,37 @@
+.row1 {
+  background-color: #305F72;
+  margin-top: 2em;
+}
+
+strong {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+table {
+  font-size: xx-small;
+}
+
+th {
+  vertical-align: top !important;
+}
+
+.top-table {
+  text-align: center;
+  font-size: small;
+  background-color: #B0E0E6;
+}
+
+.b1 {
+  margin-right: 2%;
+  height: fit-content;
+  margin-top: -13px;
+  background-color: #F18C8E;
+
+}
+
+
+.btn-print {
+  margin: auto;
+  float: right;
+}

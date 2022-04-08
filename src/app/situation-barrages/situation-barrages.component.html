@@ -1,0 +1,176 @@
+<div class="container c1 col-md-12">
+  <div class="row row1 col-md-12">
+        <span class="topTable" style="padding:4px">
+          <strong>date debut:</strong><input style="margin-right: 2em" type="datetime-local" [(ngModel)]="dateDebut">
+
+         <strong>date fin:</strong><input style="margin-right: 2em" type="datetime-local" [(ngModel)]="dateFin">
+        </span>
+
+    <span id="matOption">
+
+                <mat-form-field class="nav-item dropdown">
+            <mat-label></mat-label>
+            <mat-select [(ngModel)]="selected">
+              <mat-option class="dropdown-item" value="pluie">Pluie</mat-option>
+              <mat-option class="dropdown-item" value="volume actuel">Volume Actuel</mat-option>
+              <mat-option class="dropdown-item" value="bac">Bac</mat-option>
+              <mat-option class="dropdown-item" value="taux de remplissage">Taux de Remplissage</mat-option>
+              <mat-option class="dropdown-item" value="debit">Debit</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </span>
+    <span class="topTable ml-auto" style="padding:4px;">
+          <button style="display: inline-block; margin-right: 1em" class="btn  btn1" (click)="getData()">Valider</button>
+           <button class="btn  btn-sm" (click)="exportxlsx()"><i class="fa fa-print"></i>xlsx</button>
+    </span>
+  </div>
+</div>
+<div id="bit"></div>
+<div id="print" class="col-md-12">
+  <table class="table table-bordered bg-light table-striped  shadow p-1 mb-5 bg-body rounded">
+    <thead>
+    <tr>
+      <th class="top-table">Date</th>
+      <th class="top-table" [colSpan]="30" align="center">Evolution de {{selected}}  des barrages</th>
+    </tr>
+    <tr>
+      <th scope="col"></th>
+
+      <ng-container *ngFor="let name of listNames">
+        <th>{{name}}</th>
+      </ng-container>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let map of mapVo| keyvalue">
+      <ng-container>
+        <th>{{map.key | date:'MM/dd/yyyy'}}</th>
+      </ng-container>
+
+
+      <ng-container *ngFor="let name of listNames">
+
+        <td
+          *ngIf="this.search(name, map.key) !== null && selected === 'pluie'">{{this.search(name, map.key).pluie}}</td>
+        <td
+          *ngIf="this.search(name, map.key) !== null && selected === 'volume actuel'">{{(this.search(name, map.key).volumeActuel).toFixed(2)}}</td>
+        <td *ngIf="this.search(name, map.key) !== null && selected === 'bac'">{{this.search(name, map.key).bac}}</td>
+        <td
+          *ngIf="this.search(name, map.key) !== null && selected === 'taux de remplissage'">{{(this.search(name, map.key).tr).toFixed(2)}}</td>
+        <td
+          *ngIf="this.search(name, map.key) !== null && selected === 'debit'">{{this.search(name, map.key).debit}}</td>
+        <td
+          *ngIf="this.search(name, map.key) === null && name !== 'Totale' && name !== 'Totale hors bassin ABHT' && name !== 'Totale du bassin ABHT' "></td>
+      </ng-container>
+      <td>{{(calculeTotale(2, map.key)).toFixed(2)}}</td>        <!-- totale bassin -->
+      <td>{{(calculeTotale(1, map.key)).toFixed(2)}}</td>       <!-- totale hors bassin -->
+      <td>{{(calculeTotale(0, map.key)).toFixed(2)}}</td>         <!-- totale -->
+    </tr>
+
+
+    </tbody>
+  </table>
+
+  <div class="row row1 div-bottom col-md-12">
+
+    <div class=" row col-3">
+      <mat-form-field class="nav-item dropdown">
+        <mat-label style="color:#FFFFFF">BARRAGES</mat-label>
+        <mat-select [(value)]="barrageSelected">
+
+          <mat-option *ngFor="let barrage of barrages" class="dropdown-item"
+                      [value]="barrage.name">{{barrage.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class=" row col-3">
+      <mat-form-field class="nav-item dropdown">
+        <mat-label style="color:#FFFFFF">Variables</mat-label>
+        <mat-select [(value)]="selected1">
+          <mat-option class="dropdown-item" value="volumeActuel">Volume Actuel</mat-option>
+          <mat-option class="dropdown-item" value="pluie">Pluie</mat-option>
+          <mat-option class="dropdown-item" value="bac">Bac</mat-option>
+          <mat-option class="dropdown-item" value="tr">Taux de Remplissage</mat-option>
+          <mat-option class="dropdown-item" value="debit">Debit</mat-option>
+          <mat-option class="dropdown-item" value="bac">Bac</mat-option>
+          <mat-option class="dropdown-item" value="tr-vn-va">TR-volumeNormale-volumeActuel</mat-option>
+          <mat-option class="dropdown-item" value="p-b-d">Pluie-Bac-Debit</mat-option>
+          <mat-option class="dropdown-item" value="va-d">volumeActuel-Debit</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row col-3 cc">
+
+    </div>
+    <button id="show" class="btn btn1 " mat-list-item (click)="open(content)"> Valider</button>
+  </div>
+
+  <div class="container bg-light border shadow p-1 mb-5 bg-body rounded row1 col-md-12">
+    <button class="btn  b1 modal-title" mat-list-item (click)="graphLine1()">Graphique en line</button>
+    <button class="btn  b1 modal-title" mat-list-item (click)="graphBar()">Graphique en bar</button>
+
+    <mat-form-field style="background-color: #F18C8E ;border-radius: 6px;
+    height: 40px;" class="nav-item dropdown">
+      <mat-label style="color:#2C3E50">Choisir un date</mat-label>
+      <mat-select >
+
+        <mat-option *ngFor="let map of mapVo| keyvalue" class="dropdown-item"
+                    [value]="map.key" (click)="graphAnneau(map.key)">{{map.key | date: 'MM/dd/yyyy'}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-tab-group >
+      <mat-tab  label="Graphique en line">
+        <button class="btn btn-print btn-warning btn-sm" (click)="exportPng()"><i class="fa fa-print"></i>png</button>
+        <canvas  id="canvas1">{{ chart1 }}</canvas>
+      </mat-tab>
+      <mat-tab  label="Graphique en bar">
+        <button class="btn btn-print btn-warning btn-sm" (click)="exportPng1()"><i class="fa fa-print"></i>png</button>
+        <canvas id="canvas2">{{ chart2 }}</canvas>
+      </mat-tab>
+
+      <mat-tab label="Graphique en anneau ">
+        <button class="btn btn-print btn-warning btn-sm" (click)="exportPng2()"><i class="fa fa-print"></i>png</button>
+          <div class="chart-wrapper">
+            <div>
+              <canvas id="canvas3" class="chart" baseChart
+                      [data]="pieChartData"
+                      [labels]="pieChartLabels"
+                      [chartType]="pieChartType"
+                      [options]="pieChartOptions"
+                      [plugins]="pieChartPlugins"
+                      [colors]="pieChartColors"
+                      [legend]="pieChartLegend">
+              </canvas>
+            </div>
+          </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button class="btn b1 modal-title" mat-list-item (click)="graphLine()" id="modal-basic-title">
+      Graphique en line
+    </button>
+    <button class="btn btn-print btn-warning btn-sm" (click)="export()"><i class="fa fa-print"></i>png</button>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="divCanvas" class="modal-body">
+    <canvas id="canvas">{{ chart }}</canvas>
+    <!--    <canvas id="canvas1">{{ chart1 }}</canvas>-->
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
+
+
+
+

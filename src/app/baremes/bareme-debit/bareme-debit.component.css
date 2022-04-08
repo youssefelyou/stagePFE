@@ -1,0 +1,109 @@
+.col {
+  height: 400px;
+  margin-top: 2%;
+  background-color: #305F72;
+}
+
+.border {
+  height: 400px;
+}
+
+.time {
+
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  float: right !important;
+  height: 35px;;
+  border-radius: 8px;
+}
+
+.dropdown {
+  margin-top: 2px;
+}
+
+.r1 {
+  border-style: ridge;
+  border-radius: 10px;
+  margin: 2em 0 -26px -20px;
+  background-color: #305F72;
+  width: 83em;
+}
+
+.row1 {
+  background-color: #305F72;
+  margin: 1%;
+}
+
+thead {
+  background-color: #ADD8E6;
+}
+
+tbody {
+  background-color: #F8F8FF;
+}
+
+strong {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+th {
+  font-size: x-small;
+  vertical-align: top !important;
+
+}
+
+span {
+  margin-right: 2em;
+}
+
+td {
+  font-size: xx-small;
+  vertical-align: top !important
+}
+
+.btn-sm {
+  margin-right: 10px;
+  background-color: #F18C8E;
+}
+
+.select {
+  color: aliceblue;
+}
+
+select {
+  height: 36px;
+  margin-top: 4px;
+  width: 10em;
+  border: 1px #206c6c solid;
+  border-radius: 4px;
+  box-sizing: unset;
+}
+
+
+
+
+.list-item {
+  background-color: #c1c1c1;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.row-header {
+  background-color: #a9d8ae;;
+  width: 100%;
+  margin: auto;
+}
+
+.img1{
+  float: left;
+}
+.img2{
+  float: right;
+}
+
+img {
+  height: 50px;
+  width: 70px
+}

@@ -1,0 +1,74 @@
+
+  <mat-card class=" card col-md-8">
+    <div class="card-text" style="text-align: center">
+      <h3>Observation </h3>
+    </div>
+
+
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CR</mat-label>
+      <label>
+        <input type="number" matInput  [(ngModel)]="observation.cr">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CMG</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.cmg">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CAM</mat-label>
+      <label>
+        <input type="number" matInput  [(ngModel)]="observation.cam">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>BP</mat-label>
+      <label>
+        <input type="number" matInput  [(ngModel)]="observation.bp">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>AEP</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.aep">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+    <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Fuits</mat-label>
+      <label>
+        <input id="bac" type="text" matInput  [(ngModel)]="observation.fuits">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+    <span>
+      <button class="hideObservation"  mat-button (click)="save()" >Valider</button>
+  </span>
+
+</mat-card>

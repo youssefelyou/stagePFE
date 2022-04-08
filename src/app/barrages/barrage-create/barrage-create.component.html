@@ -1,0 +1,691 @@
+<div class="container col-md-12">
+
+  <simple-notifications></simple-notifications>
+  <div class="row targetDiv col-md-12" id="div1">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Barrage: </b></h3>
+      </div>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom de barrage</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.name">
+      </label>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>IRE</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.ire">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CR</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.cr">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+<!--      <span>-->
+<!--    <mat-form-field appearance="outline">-->
+<!--      <mat-label>Province</mat-label>-->
+<!--      <input type="text" matInput placeholder="Placeholder" >-->
+<!--      <mat-hint></mat-hint>-->
+<!--    </mat-form-field>-->
+<!--  </span>-->
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Province</mat-label>
+          <mat-select [(ngModel)]="barrage.province">
+          <mat-option  value="EL HAOUZ">EL HAOUZ</mat-option>
+          <mat-option  value="AZILAL">AZILAL</mat-option>
+          <mat-option  value="ESSAOUIRA">ESSAOUIRA</mat-option>
+          <mat-option  value="CHICHAOUA">CHICHAOUA</mat-option>
+          <mat-option  value="MARRAKECH">MARRAKECH</mat-option>
+          <mat-option  value="EL HAOUZ-KELAA">EL HAOUZ-KELAA</mat-option>
+          <mat-option  value="SAFI">SAFI</mat-option>
+          <mat-option  value="RHAMNA">RHAMNA</mat-option>
+          <mat-option  value="EL KELAA">EL KELAA</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.type">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Type Barrage</mat-label>
+          <mat-select [(value)]="barrage.type1">
+          <mat-option id="ccc" value="bassin"> Bassin</mat-option>
+            <mat-option id="cc" value="hors bassin"> Hors bassin</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+
+<!--      <span>-->
+<!--    <mat-form-field appearance="outline">-->
+<!--      <mat-label></mat-label>-->
+<!--      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.sousBassin">-->
+<!--      <mat-hint></mat-hint>-->
+<!--    </mat-form-field>-->
+<!--  </span>-->
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Sous bassin</mat-label>
+          <mat-select [(ngModel)]="barrage.sousBassin">
+
+          <mat-option  value="LAGH">LAGH</mat-option>
+          <mat-option  value="ABHT">ABHT</mat-option>
+          <mat-option  value="Bassin R'dat">Bassin R'dat</mat-option>
+          <mat-option  value="ZAT">ZAT</mat-option>
+          <mat-option  value="GHMAT">GHMAT</mat-option>
+          <mat-option  value="Oued Issil">Oued Issil</mat-option>
+          <mat-option  value="NFIS">NFIS</mat-option>
+          <mat-option  value="Oued Akar">Oued Akar</mat-option>
+          <mat-option  value="Assif El Mel">Assif El Mel</mat-option>
+          <mat-option  value="Seksawa">Seksawa</mat-option>
+          <mat-option  value="Imintanout">Imintanout</mat-option>
+          <mat-option  value="El Bour">El Bour</mat-option>
+          <mat-option  value="Tensift">Tensift</mat-option>
+          <mat-option  value="Ksob">Ksob</mat-option>
+
+
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Prise de Restitution</mat-label>
+      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.priseRestitution">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Hauteur sur fondation</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.hauteurSurFondation">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Niveau  crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.niveauCrete">
+      <mat-hint>En NGM</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Longeur en crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.longueurEnCrete">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>largeur en crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.largeurEnCrete">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre des prises</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.nmbrePrises">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Diamètre conduite</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.diametreConduite">
+      <mat-hint>En millimètre</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+
+<!--      -->
+<!--      <span>-->
+<!--    <mat-form-field appearance="outline">-->
+<!--      <mat-label></mat-label>-->
+<!--      <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.oued">-->
+<!--      <mat-hint></mat-hint>-->
+<!--    </mat-form-field>-->
+<!--  </span>-->
+
+
+      <span>
+        <mat-form-field class="nav-item dropdown" appearance="outline">
+        <mat-label class="labelSelect">Oued</mat-label>
+          <mat-select [(ngModel)]="barrage.oued">
+
+          <mat-option value="LAKHDAR">LAKHDAR</mat-option>
+          <mat-option value="TASSAOUTE">TASSAOUTE</mat-option>
+          <mat-option value="NFIS">NFIS</mat-option>
+          <mat-option value="IGOUZOULENE">IGOUZOULENE</mat-option>
+          <mat-option value="EL MEL">EL MEL</mat-option>
+          <mat-option value="CHICHAOUA">CHICHAOUA</mat-option>
+          <mat-option value="LAGH">LAGH</mat-option>
+          <mat-option value="R'DAT">R'DAT</mat-option>
+          <mat-option value="ZAT">ZAT</mat-option>
+          <mat-option value="OURIKA">OURIKA</mat-option>
+          <mat-option value="ISSIL">ISSIL</mat-option>
+          <mat-option value="IMLIL">IMLIL</mat-option>
+          <mat-option value="RERAYA">RERAYA</mat-option>
+          <mat-option value="AMEZNASS">AMEZNASS</mat-option>
+          <mat-option value="IMINTANOUTE">IMINTANOUTE</mat-option>
+          <mat-option value="SEKSAOUA">SEKSAOUA</mat-option>
+          <mat-option value="TENSIFT">TENSIFT</mat-option>
+          <mat-option value="KSOB">KSOB</mat-option>
+          <mat-option value="JEMALLA">JEMALLA</mat-option>
+          <mat-option value="AMEZMIZ">AMEZMIZ</mat-option>
+          <mat-option value="AKAR">AKAR</mat-option>
+          <mat-option value="GHMAT">GHMAT</mat-option>
+          <mat-option value="JBILET">JBILET</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date mise en service</mat-label>
+      <input type="date" matInput placeholder="Placeholder" [(ngModel)]="barrage.dateMiseService">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+       <span>
+    <mat-form-field appearance="outline">
+      <mat-label>x</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.x">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>y</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.y">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>z</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.z">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+      <button class="showSingle" target="2" mat-button>Suivant</button>
+   </span>
+    </mat-card>
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div2">
+    <div id="digCol">
+
+      <mat-card class=" card col-md-8">
+        <div class="card-text" style="text-align: center">
+          <h3><b>Digue de col: </b></h3>
+
+        </div>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="digueCol.type">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Hauteur sur fondation</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="digueCol.hauteurSurFondation">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>niveau crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="digueCol.niveauCrete">
+      <mat-hint>en NGM</mat-hint>
+    </mat-form-field>
+  </span>
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>longueur en crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="digueCol.longueurCrete">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Largeur en crête</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="digueCol.largeurCrete">
+      <mat-hint>En mètre (m)</mat-hint>
+    </mat-form-field><br>
+
+  </span>
+        <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="1" mat-button>Précédent</button>
+  </span>
+
+        <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="3" mat-button (click)="saveDig()">Suivant</button>
+  </span>
+
+      </mat-card>
+
+    </div>s
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div3">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Evacuateur de crue:</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.evacuateurCrues.type">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Hauteur seuil</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.evacuateurCrues.hauteurSeuil">
+      <mat-hint>En NGM </mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Longueur déversante </mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.evacuateurCrues.longueurDeversante">
+      <mat-hint>en mètre (m)</mat-hint>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label> Largeur chenal restitution</mat-label>
+      <input type="text" matInput placeholder="Placeholder"
+             [(ngModel)]="barrage.evacuateurCrues.largeurChenalRestitution">
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Crues de projet (10.000ans)</mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.evacuateurCrues.cruesProjet">
+      <mat-hint>En m3/s</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Débit max évacué </mat-label>
+      <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.evacuateurCrues.debitMax">
+      <mat-hint>En m3/s</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="2" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="4" mat-button (click)="saveEv()">Suivant</button>
+  </span>
+    </mat-card>
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div4">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Hydrologie</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>surface du bassin versant</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.hydrologie.surface">
+      </label>
+      <mat-hint> Km2</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>crue de projet (10.000ans)</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.hydrologie.crueProjet">
+      </label>
+      <mat-hint>m3/s</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>crue de chantier ( 10 ans)</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="barrage.hydrologie.crueChentier">
+      </label>
+      <mat-hint>m3/s</mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Cours d'eau</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.hydrologie.courEau">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Apport moyen annuel</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.hydrologie.apportMoyenAnnuel">
+      </label>
+      <mat-hint>millions m3 </mat-hint>
+    </mat-form-field>
+  </span><br>
+
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="3" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="5" mat-button (click)="saveHydro()">Suivant</button>
+  </span>
+    </mat-card>
+
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div5">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Retenue</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>volume retenue normale</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.retenue.volumeRetenueNormal">
+      </label>
+      <mat-hint>NGM</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>volume régularisé</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.retenue.volumeRegularise">
+      </label>
+      <mat-hint>millions m3</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>surface de retenue normale    </mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.retenue.surfaceRetenueNormal">
+      </label>
+      <mat-hint>Km2</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>niveau retenue normale          </mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.retenue.niveauRetenueNormal">
+      </label>
+      <mat-hint>NGM</mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>niveau des plus hautes eaux  </mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.retenue.niveauEauMax">
+      </label>
+      <mat-hint>NGM</mat-hint>
+    </mat-form-field>
+  </span><br>
+
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="4" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="6" mat-button (click)="saveRetenue()">Suivant</button>
+  </span>
+    </mat-card>
+
+  </div>
+
+
+  <div class=" row targetDiv col-md-12" id="div6">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b> Vidange Fond</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>pertuis en béton                           </mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.vidangeFond.pertuisBeton">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Débit max évacue</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.vidangeFond.debitMaxEvacue">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>cote seuil d’entrée</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.vidangeFond.coteSeuilEnter">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="5" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="7" mat-button (click)="saveVidange()">Suivant</button>
+  </span>
+    </mat-card>
+
+  </div>
+
+
+
+  <div class=" row targetDiv col-md-12" id="div7">
+    <mat-card class=" card col-md-8">
+      <div class="card-text" style="text-align: center">
+        <h3><b>Chef de barrage</b></h3>
+      </div>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom et Prenom</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.gardien.nomPrenom">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.gardien.age">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CIN</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="barrage.gardien.cin">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date de naissance</mat-label>
+      <label>
+        <input type="date" matInput [(ngModel)]="barrage.gardien.datenaissance">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Date de recrutement</mat-label>
+      <label>
+        <input type="date" matInput [(ngModel)]="barrage.gardien.entrerFonction">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Situation administrative</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.gardien.situationadministrative">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Situation familiale</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.gardien.situationfami">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Niveau scolaire</mat-label>
+      <label>
+        <input type="text" matInput [(ngModel)]="barrage.gardien.niveauscolaire">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Numéro de Téléphone</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="barrage.gardien.ntel">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span><br>
+
+
+      <span style="float: left ; margin-top: 5%;">
+      <button class="showDernier" target="6" mat-button>Précédent</button>
+  </span>
+
+      <span style="float: right ; margin-top: 5%;">
+      <button class="showSingle" target="1" mat-button (click)="saveGardien()">Valider</button>
+  </span>
+    </mat-card>
+
+  </div>
+
+</div>

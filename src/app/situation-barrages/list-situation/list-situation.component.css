@@ -1,0 +1,34 @@
+/*th{*/
+/*  border: 1px solid #17a2b8;*/
+/*}*/
+
+/*td {*/
+/*  border: 1px solid #17a2b8;*/
+/*}*/
+
+strong{
+  margin-left: 2%;
+}
+span{
+  font-size:  initial;;
+  color: #305F72;
+}
+.btn1{
+  background-color: #305F72;
+  color: #FFFFFF;
+  float: right;
+}
+thead{
+  background-color: #305F72;
+  color: #FFFFFF;
+}
+table{
+  font-size: xx-small;
+}
+.sm{
+  font-size: small;
+}
+
+td{
+  height: 30px;
+}

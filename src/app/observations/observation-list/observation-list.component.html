@@ -1,0 +1,32 @@
+<mat-card>
+  <table  class="table  table-hover bg-light">
+    <thead CLASS="table-head">
+
+    <th >ID</th>
+    <th>FUITS</th>
+    <th>AEP</th>
+    <th>BP</th>
+    <th>CAM</th>
+    <th>CMG</th>
+    <th>CR</th>
+    <th></th>
+    <th></th>
+
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of observations; index as i">
+      <td>{{c.id}}</td>
+      <td>{{c.fuits}}</td>
+      <td>{{c.aep}}</td>
+      <td>{{c.bp}}</td>
+      <td>{{c.cam}}</td>
+      <td>{{c.cmg}}</td>
+      <td>{{c.cr}}</td>
+      <td><span><i class="fa fa-trash btn btn-danger btn-lg"></i></span></td>
+      <td><span routerLink="voiture-create"><i
+        class="fa fa-edit btn btn-warning btn-lg"></i></span></td>
+    </tr>
+    </tbody>
+  </table>
+</mat-card>
+

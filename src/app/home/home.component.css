@@ -1,0 +1,39 @@
+
+.col-2 {
+  margin: 3% 3%;
+  background-color: #6dba54 !important;
+}
+
+h3 {
+  display: none;
+  font-size: small;
+  color: #FFFFFF;
+}
+
+h4 {
+
+  font-size: small;
+  color: #FFFFFF;
+}
+
+a {
+  color: black;
+  font-size: small;
+  font-family: math, serif;
+}
+
+img {
+  height: 40em;
+  width: 100%;
+}
+
+.bg-light {
+  min-width: max-content;
+}
+
+marquee{
+  border-bottom: solid 1px #ebebeb;
+  box-shadow:0 6px 20px 0 rgb(110 110 110);
+  text-align: center;
+  background-color: #6dba54;
+}

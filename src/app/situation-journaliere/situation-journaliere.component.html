@@ -1,0 +1,162 @@
+<div class="container c1 col-md-12">
+  <div class="row row1 col-md-12">
+        <span class="topTable" style="padding:4px">
+          <strong>date </strong><input style="margin-right: 2em" type="datetime-local" [(ngModel)]="dateToday">
+
+    <span class="topTable ml-auto" style="padding:4px;">
+
+          <button style="display: inline-block;background-color:#B0E0E6;margin-right: 1em" class="btn btn1" (click)="getData()">Valider</button>
+    </span>
+
+    </span>
+
+    <span class="select">
+      <select name="province" id="province" [(ngModel)]="selectedProvince" (ngModelChange)="getOrderByProvince()" >
+        <option style="font-family: 'Arial Black',fantasy" value="province">Provinces</option>
+         <option value="Tous">Tous</option>
+         <option value="EL HAOUZ">Al Haouz</option>
+          <option value="AZILAL">Azilal</option>
+          <option value="EL KELAA">El Kelaa</option>
+          <option value="ESSAOUIRA">Essaouira</option>
+          <option value="CHICHAOUA">Chichaoua</option>
+          <option value="MARRAKECH">Marrakech</option>
+          <option value="EL HAOUZ-KELAA">Al Haouz-kelaa</option>
+          <option value="SAFI">Safi</option>
+          <option value="RHAMNA">Rhamna</option>
+      </select>
+    </span>
+    <span class="select">
+      <select name="bassin" id="bassin" [(ngModel)]="selected" (ngModelChange)="getOrderByBassin()" >
+        <option style="font-family: 'Arial Black',fantasy" value="bassin">Sous Bassin</option>
+         <option value="Tous">Tous</option>
+         <option value="LAGH">LAGH</option>
+          <option value="ABHT">ABHT</option>
+          <option value="Bassin R'dat">Bassin R'dat</option>
+          <option value="ZAT">ZAT</option>
+          <option value="GHMAT">GHMAT</option>
+          <option value="Oued Issil">Oued Issil</option>
+          <option value="NFIS">NFIS</option>
+          <option value="Oued Akar">Oued Akar</option>
+          <option value="Assif El Mel">Assif El Mel</option>
+          <option value="Seksawa">Seksawa</option>
+          <option value="Imintanout">Imintanout</option>
+          <option value="El Bour">El Bour</option>
+          <option value="Tensift">Tensift</option>
+          <option value="Ksob">Ksob</option>
+      </select>
+    </span>
+
+    <span class="select">
+      <select name="oued" id="oued" [(ngModel)]="selectedOued" (ngModelChange)="getOrderByOued()" >
+        <option style="font-family: 'Arial Black',fantasy" value="oued">Oueds</option>
+         <option value="Tous">Tous</option>
+         <option value="LAKHDAR">Lakhdar</option>
+         <option value="TASSAOUTE">Tassaoute</option>
+         <option value="NFIS">NFIS</option>
+         <option value="IGOUZOULENE">Igouzoulene</option>
+         <option value="EL MEL">EL mel</option>
+         <option value="CHICHAOUA">chichaoua</option>
+         <option value="LAGH">lagh</option>
+         <option value="R'DAT">R'dat</option>
+         <option value="ZAT">Zat</option>
+         <option value="OURIKA">Ourika</option>
+         <option value="ISSIL">Issil</option>
+         <option value="IMLIL">Imlil</option>
+         <option value="RERAYA">Reraya</option>
+         <option value="AMEZNASS">ameznass</option>
+         <option value="IMINTANOUTE">imintanoute</option>
+         <option value="SEKSAOUA">Seksaoua</option>
+         <option value="TENSIFT">Tensift</option>
+         <option value="KSOB">Ksob</option>
+         <option value="JEMALLA">Jemalla</option>
+         <option value="AMEZMIZ">Amezmiz</option>
+         <option value="AKAR">Akar</option>
+         <option value="GHMAT">Ghmat</option>
+         <option value="JBILET">Jbilet</option>
+      </select>
+    </span>
+
+    <div class="print-button me-auto">
+            <button style="background-color:#B0E0E6 " (click)="export()" class="btn  btn-sm"><i class="fa fa-print"></i>xlsx</button>
+            <button style="background-color:#B0E0E6 " (click)="export1()" class="btn  btn-sm"><i class="fa fa-print"></i>png</button>
+            <button style="background-color:#B0E0E6 " ngxPrint [useExistingCss]="true" [printTitle]="title" styleSheetFile="situation-journaliere.component.css" printSectionId="print" class="btn  btn-sm"><i class="fa fa-print"></i>pdf</button>
+    </div>
+
+  </div>
+</div>
+<div id="print" class="card-body">
+  <table class="table table-bordered table-striped  shadow p-1 mb-5 bg-body rounded ">
+    <thead id="cc">
+    <tr>
+
+      <th id="top-table" colspan="20">Situation journalière des données hydrologiques de {{this.dateToday | date: 'MM/dd/yyyy'}}</th>
+    </tr>
+    <tr>
+      <th scope="row">Stations</th>
+      <th scope="row">Hauteur d'Eau<br> -m-<br> (HJ)</th>
+      <th scope="row">Hauteur d'Eau<br> -m-<br> (HJ - 1)</th>
+      <th scope="row">Débit en<br> m3/s<br>(HJ)</th>
+      <th scope="row">Bac</th>
+      <th scope="row">Débit<br> pré-alerte</th>
+      <th scope="row">Débit alerte</th>
+      <th scope="row">Volume <br>actuel Mm3<br>(VJ)</th>
+      <th scope="row">Volume <br>actuel Mm3<br>(VJ-1)</th>
+      <th scope="row">Variation volume</th>
+      <th scope="row">Volume<br>Normale <br>Mm3</th>
+      <th scope="row">Taux de<br> remplissage %</th>
+      <th scope="row">Pluie</th>
+      <th scope="row">Neige</th>
+      <th scope="row">Turbinage <br> en m3</th>
+      <th scope="row">Irrigation <br>en m3</th>
+      <th scope="row">Vidange de <br>fond m3</th>
+      <th scope="row">Evacuateur<br>de crue -m3</th>
+      <th scope="row">Turbidité<br>g / l</th>
+      <th scope="row">Observation</th>
+    </tr>
+    </thead>
+    <tbody class="">
+    <tr *ngFor="let situation of listSituations">
+      <th>{{situation.libelle}}</th>
+      <td>{{situation.niveauEau}}</td>
+      <td>{{situation.niveauEauYesterday}}</td>
+      <td>{{situation.debit}}</td>
+      <td *ngIf="situation.bac !== 0">{{situation.bac}}</td>
+      <td *ngIf="situation.bac === 0"></td>
+      <td *ngIf="situation.debitPreAlerte !== 0">{{situation.debitPreAlerte}}</td>
+      <td *ngIf="situation.debitPreAlerte === 0"></td>
+      <td *ngIf="situation.debitAlerte !== 0">{{situation.debitAlerte}}</td>
+      <td *ngIf="situation.debitAlerte === 0"></td>
+      <td *ngIf="situation.volumeActuel !== 0">{{situation.volumeActuel.toFixed(2)}}</td>
+      <td *ngIf="situation.volumeActuel === 0"></td>
+      <td *ngIf="situation.volumeYesterday !== 0">{{situation.volumeYesterday.toFixed(2)}}</td>
+      <td *ngIf="situation.volumeYesterday === 0"></td>
+      <td
+        *ngIf="(situation.volumeActuel - situation.volumeYesterday) !== 0">{{(situation.volumeActuel - situation.volumeYesterday).toFixed(2)}}</td>
+      <td *ngIf="(situation.volumeActuel - situation.volumeYesterday) === 0"></td>
+      <td *ngIf="situation.volumeNormal !== 0">{{situation.volumeNormal}}</td>
+      <td *ngIf="situation.volumeNormal === 0"></td>
+
+      <td *ngIf="situation.tauxRemplissage !== 0">{{situation.tauxRemplissage.toFixed(2)}}</td>
+      <td *ngIf="situation.tauxRemplissage === 0"></td>
+      <td>{{situation.pluie}}</td>
+      <td>{{situation.neige}}</td>
+      <td *ngIf="situation.turbinage !== 0">{{situation.turbinage}}</td>
+      <td *ngIf="situation.turbinage === 0"></td>
+      <td>{{situation.irrigation}}</td>
+      <td>
+        <span>{{situation.vidangeFond}}</span><br>
+        <span *ngIf="situation.aep !== 0">AEP: {{situation.aep}}</span><br>
+        <span *ngIf="situation.bp !== 0">BP: {{situation.bp}}</span>
+      </td>
+      <td>{{situation.evacuateurCrues}}</td>
+      <td>{{situation.turbidite}}</td>
+      <td>
+        <span *ngIf="situation.cmg !== 0">CMG: {{situation.cmg}}</span><br>
+        <span *ngIf="situation.cam !== 0">  CAM: {{situation.cam}}</span><br>
+        <span *ngIf="situation.fuits !== null && situation.fuits !== '' "> Fuite: {{situation.fuits}}</span>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

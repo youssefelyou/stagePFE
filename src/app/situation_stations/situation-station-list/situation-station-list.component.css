@@ -1,0 +1,21 @@
+
+strong{
+  margin-left: 2%;
+}
+span{
+  font-size: small;
+  color: #305F72;
+}
+.btn1{
+  background-color: #305F72;
+  color: #FFFFFF;
+  float: right;
+}
+thead{
+  background-color: #305F72;
+  font-size: xx-small;
+  color: #FFFFFF;
+}
+tbody{
+  font-size: xx-small;
+}

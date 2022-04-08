@@ -1,0 +1,235 @@
+<div class="container col-md-12  ">
+  <simple-notifications></simple-notifications>
+  <div class="row targetDiv col-md-12 " id="div1">
+
+    <mat-card class=" card-title  col-md-3 shadow p-3 mb-5 bg-body rounded">
+
+      <span style="margin-right: 0;">
+        <input id="daaate" class="input-date" type="text" [(ngModel)]="this.situation.date">
+      </span>
+
+      <span class="scrollable">
+
+        <mat-action-list *ngFor="let b of barrages ; index as i" size="4">
+           <button class="toggle" mat-list-item (click)="situation.barrage.name = b.name ; getVolumeNormal() ">
+                    {{b.name}}
+           </button>
+        </mat-action-list>
+      </span>
+
+
+    </mat-card>
+
+    <mat-card style="margin-top: 1em;" class=" card col-md-8 bg-light shadow p-3 mb-5 bg-body rounded ">
+      <div id="header" class="card-text" style="text-align: center">
+
+      </div>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Barrage</mat-label>
+      <label>
+        <input style="color:#49C1F4" disabled type="text" matInput placeholder="" [(ngModel)]="situation.barrage.name">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Hauteur d'eau</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="situation.hauteurActuel"
+               (focusout)="findByBarrageNameAndCote()">
+      </label>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Debit</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="situation.debit">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Pluie  </mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="situation.pluie">
+      </label>
+    </mat-form-field>
+  </span>
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Epaisseur du neige   en cm</mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="situation.neige">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Volume Normal Mm3</mat-label>
+      <label>
+        <input id="volumeNormal" disabled type="number" matInput placeholder="Placeholder"
+               [(ngModel)]="situation.volumeNormal">
+      </label><mat-checkbox id="submit" class="able"></mat-checkbox>
+    </mat-form-field>
+
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Turbinage </mat-label>
+      <label>
+        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="situation.turbinage">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Vidange de fond </mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="situation.vidangeFond">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Evacuateur de crue -m3 </mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="situation.evacuateurCrues">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Irrigation en m3</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="situation.irrigation">
+      </label>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Turbidité g/l</mat-label>
+      <label>
+        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="situation.turbidite">
+      </label>
+    </mat-form-field>
+  </span>
+
+      <span>
+    <mat-form-field appearance="outline">
+      <mat-label>BAC</mat-label>
+      <label>
+        <input  type="number" matInput  [(ngModel)]="situation.bac">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+      <span>
+        <button class="showObservation border " mat-button>Observation</button>
+      </span>
+      <span class="btn-valider">
+      <button [disabled]="situation.hauteurActuel == undefined" style="color: #305F72" class="btn  border" mat-button (click)=" save() ; findList()">Valider</button>
+   </span>
+
+    </mat-card>
+    <div class="observationDiv">
+
+      <mat-card class=" obsCard card col-md-8">
+        <div class="card-text" style="text-align: center">
+          <h3>Observation </h3>
+        </div>
+
+
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CR</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.cr">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CMG</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.cmg">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>CAM</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.cam">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>BP</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.bp">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>AEP</mat-label>
+      <label>
+        <input type="number" matInput [(ngModel)]="observation.aep">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+
+        <span>
+    <mat-form-field appearance="outline">
+      <mat-label>Fuits</mat-label>
+      <label>
+        <input id="bac" type="text" matInput [(ngModel)]="observation.fuits">
+      </label>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </span>
+        <span>
+      <button  class="hideObservation b11" mat-button (click)="saveObservation()">Valider</button>
+  </span>
+
+        <span>
+      <button class="hideObservation b12 btn-dark" mat-button>annuler</button>
+  </span>
+
+      </mat-card>
+
+    </div>
+  </div>
+
+</div>
+
+<app-list-situation></app-list-situation>
